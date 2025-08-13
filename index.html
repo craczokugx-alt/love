@@ -39,13 +39,6 @@
       margin-top: 10px;
     }
 
-    iframe {
-      width: 100%;
-      height: 352px;
-      border-radius: 12px;
-      border: none;
-    }
-
     button {
       padding: 12px 20px;
       font-size: 16px;
@@ -63,6 +56,21 @@
       font-weight: bold;
       color: #ff1493;
       min-height: 60px;
+    }
+
+    .spotify-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ff1493;
+      text-decoration: none;
+      background-color: #ffeef5;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .spotify-link:hover {
+      background-color: #ffb6c1;
     }
   </style>
 </head>
@@ -88,9 +96,9 @@
 
   <div class="section">
     <h2>🎶 Our Playlist</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/6OFwQuaVOdfBa0ODebNSgp?utm_source=generator&theme=0" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
+    <a class="spotify-link" href="https://open.spotify.com/playlist/6OFwQuaVOdfBa0ODebNSgp" target="_blank">
+      🎧 Tap to open our playlist in Spotify
+    </a>
   </div>
 
   <div class="section">
@@ -141,41 +149,6 @@
     updatePage();
     setInterval(updatePage, 1000);
 
-    const notes = [
-      "You always make my day princess",
-      "I love you more than anything baby",
-      "I miss you so much",
-      "I can't wait for our future hehe",
-      "You are so gorgeous baby",
-      "I miss your face",
-      "Thank you for everything my love",
-      "I am so proud of you princess",
-      "You are my favorite person",
-      "I’m so lucky to have you",
-      "I can't wait to see you",
-      "I love you",
-      "Hehe mwah",
-      "I am always here for you",
-      "You mean the world to me",
-      "I hope we go to the cinema again",
-      "I'll never give up on us",
-      "You have made me the happiest man ever",
-      "You is smart, you is kind, you is important",
-      "I always wish the best for you",
-      "You deserve the world",
-      "You are a princess",
-      "I hope you liked this hehe",
-      "Can we all be like a rainbow?"
-    ];
-
-    function generateNote() {
-      const randomIndex = Math.floor(Math.random() * notes.length);
-      document.getElementById("note").innerText = notes[randomIndex];
-    }
-  </script>
-</body>
-</html>
-
-
+    const notes
 
 
