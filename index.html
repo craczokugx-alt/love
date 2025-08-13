@@ -116,4 +116,63 @@
       let nextMonth = anniversaryDate.getMonth() + months + 1;
       let nextYear = anniversaryDate.getFullYear();
       while (nextMonth > 11) {
-        nextMonth
+        nextMonth -= 12;
+        nextYear += 1;
+      }
+
+      const nextAnniversary = new Date(nextYear, nextMonth, 16);
+      const diffTime = nextAnniversary - now;
+
+      if (diffTime <= 0) {
+        document.getElementById("countdownText").innerText = 
+          `🎉 Happy ${months + 1}-month anniversary! 🎉`;
+        return;
+      }
+
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      const diffHours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
+      const diffMinutes = Math.floor((diffTime / (1000 * 60)) % 60);
+      const diffSeconds = Math.floor((diffTime / 1000) % 60);
+
+      document.getElementById("countdownText").innerText = 
+        `Countdown to ${months + 1}-month anniversary: ${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s 💞`;
+    }
+
+    updatePage();
+    setInterval(updatePage, 1000);
+
+    const notes = [
+      "You always make my day princess",
+      "I love you more than anything baby",
+      "I miss you so much",
+      "I can't wait for our future hehe",
+      "You are so gorgeous baby",
+      "I miss your face",
+      "Thank you for everything my love",
+      "I am so proud of you princess",
+      "You are my favorite person",
+      "I’m so lucky to have you",
+      "I can't wait to see you",
+      "I love you",
+      "Hehe mwah",
+      "I am always here for you",
+      "You mean the world to me",
+      "I hope we go to the cinema again",
+      "I'll never give up on us",
+      "You have made me the happiest man ever",
+      "You is smart, you is kind, you is important",
+      "I always wish the best for you",
+      "You deserve the world",
+      "You are a princess",
+      "I hope you liked this hehe",
+      "Can we all be like a rainbow?"
+    ];
+
+    function generateNote() {
+      const randomIndex = Math.floor(Math.random() * notes.length);
+      document.getElementById("note").innerText = notes[randomIndex];
+    }
+  </script>
+</body>
+</html>
+
